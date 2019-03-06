@@ -8,7 +8,7 @@ return {
     
 	entry: './src/client/app.js',
 	output: {
-		path: path.join(__dirname,'dist/'),
+		path: path.join(__dirname), //path: path.join(__dirname,'dist/')
 		filename: 'src.js',
 		publicPath: '/'
 	},
