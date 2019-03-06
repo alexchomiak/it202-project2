@@ -1,0 +1,5 @@
+{
+  "main.css": "/styles.css",
+  "main.js": "/src.js",
+  "manifest.json": "/manifest.json"
+}

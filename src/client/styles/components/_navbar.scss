@@ -1,0 +1,21 @@
+.nav {
+    margin: 0 0 0 0;
+    padding: 1rem 0 1rem 0;
+    background-color: darken($header-color,3%);
+    display: flex;
+    justify-content: center;
+}
+
+.navlink {
+    color: #b5ff89f1;
+
+    text-decoration: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: $m-size;
+}
+
+.navlink-active {
+    color: #fcfcfcf1;
+    text-decoration: none;
+}
