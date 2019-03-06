@@ -25,7 +25,7 @@ return {
                 {
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                        publicPath: "dist/"
+                        publicPath: "/"
                     }
                 },
                 'css-loader',
@@ -59,7 +59,7 @@ return {
 		])
     ],
 	devServer: {
-		contentBase: path.resolve(__dirname,'dist/'),
+		contentBase: path.resolve(__dirname),
 		historyApiFallback:true,
 		watchContentBase: true,
 		compress: true
