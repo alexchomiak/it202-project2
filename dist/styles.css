@@ -1,0 +1,11 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #241022;
+  background: radial-gradient(circle, #241022 0%, #301b32 100%); }
+
+h1 {
+  font-size: 1.6rem; }
+
