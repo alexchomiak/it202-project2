@@ -12,8 +12,8 @@ export default class Graffiti extends Component {
           <NavBar/>
           <Switch>
            
-            <Route exact path="/info" component={null}/>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/it202-project2/info" component={null}/>
+            <Route exact path="/it202-project2/" component={Home}/>
 
           </Switch>
 
