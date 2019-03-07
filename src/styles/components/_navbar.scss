@@ -4,10 +4,16 @@
     background-color: darken($header-color,3%);
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
 }
-
-.navlink {
-    color: #b5ff89f1;
+.nav-link:hover {
+    color: rgba(238, 254, 217, 0.945);
+}
+.nav-link:visited {
+    color: rgba(238, 254, 217, 0.945);
+}
+.nav-link {
+    color: #8cf486f1 !important;
 
     text-decoration: none;
     padding-left: 1rem;
@@ -15,7 +21,8 @@
     font-size: $m-size;
 }
 
-.navlink-active {
-    color: #fcfcfcf1;
+.nav-link--active {
+    font-weight: 900;
+    color: #ffffff !important;
     text-decoration: none;
 }
