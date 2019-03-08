@@ -51,7 +51,7 @@ export default class Graffiti extends Component {
     if(e.target.ward.value !== '') ward = e.target.ward.value
 
     //initialize url
-    let url = "https://data.cityofchicago.org/resource/cdmx-wzbz.json";
+    let url = "https://data.cityofchicago.org/resource/cdmx-wzbz.json?$limit=250";
     let urlParams = {}
     //set params
     if(e.target.status.value !== "All") urlParams = {...urlParams, status: e.target.status.value}

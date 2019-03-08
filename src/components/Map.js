@@ -47,7 +47,7 @@ export class MapContainer extends React.Component {
         
     }
 
-    
+    console.log("oof")
 
     return (
         <Map
@@ -91,17 +91,6 @@ export class MapContainer extends React.Component {
         
           )
         })}
-
-        
-        <Marker
-        onClick={this.onMarkerClick}
-    title={'The marker`s title will appear as a tooltip.'}
-    name={'SOMA'}
-    position={{lat: 37.778519, lng: -122.405640}} />
-  <Marker
-  onClick={this.onMarkerClick}
-    name={'Dolores park'}
-    position={{lat: 37.759703, lng: -122.428093}} />
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
@@ -120,5 +109,5 @@ export class MapContainer extends React.Component {
   
 }
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyAoD1ugx6gtXD_RUD-EIMtge1jfBaIDvSE'
+  apiKey: 'AIzaSyCbhpG5PH6OsEVbG_Pk0-Y5jtqthmD9mVg'
 })(MapContainer);
