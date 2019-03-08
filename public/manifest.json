@@ -3,7 +3,7 @@
   "short_name": "Graffiti",
   "theme_color": "#44881f",
   "background_color": "#1ca70a",
-  "display": "browser",
+  "display": "fullscreen",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "https://alexchomiak.github.io/it202-project2/",

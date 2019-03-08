@@ -11,18 +11,18 @@
 
 .header-title {
     margin: 0;
-    font-size: $xl-size;
+    font-size: $l-size;
     padding: 0rem;
 }
 
 .header-subtitle {
     margin: 0;
-    font-size: $l-size;
+    font-size: $m-size;
     padding: 0rem;
 }
 
 @media (max-width: $mobilebreakpoint) {
-    .header {//
+    .header {
        
         height: $header-percentage-mobile;
     }
@@ -33,3 +33,4 @@
         display: none;
     }
 }
+
