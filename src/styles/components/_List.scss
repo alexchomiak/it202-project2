@@ -1,14 +1,27 @@
-.list {
-    height: 50rem;
-    overflow: hidden;
-}
 
 .cardlist {
-    overflow: auto;
-    height: 50rem;
+    margin-top: 0rem;
+    overflow: auto !important;
+    height: $content-percentage;
+    
 }
 
 .card {
-    width: 100% !important;
-    margin-bottom: 1rem !important;
+    margin: 0 auto;
+    width: 90% !important;
+    margin-top: 1rem !important;
+
+    
+}
+
+.prompt {
+    color: $header-color;
+    text-align: center;
+    font-weight: 900;
+}
+@media (max-width: $mobilebreakpoint) {
+  
+    .cardlist {
+        height: $content-percentage-mobile;
+    }
 }

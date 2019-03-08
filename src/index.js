@@ -4,7 +4,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import './App.scss';
 import Graffiti from './components/Graffiti';
-
+import 'normalize.css/normalize.css'
 ReactDOM.render(<Graffiti />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

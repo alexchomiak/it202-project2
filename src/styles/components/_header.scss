@@ -1,19 +1,35 @@
 .header {
     text-align: center;
-
+    height: $header-percentage;
     margin: 0;
     color: white;
-    padding:1rem 2rem;
     background-color: $header-color;
+    padding: 0rem;
+
 
 }
 
 .header-title {
     margin: 0;
     font-size: $xl-size;
+    padding: 0rem;
 }
 
 .header-subtitle {
     margin: 0;
     font-size: $l-size;
+    padding: 0rem;
+}
+
+@media (max-width: $mobilebreakpoint) {
+    .header {//
+       
+        height: $header-percentage-mobile;
+    }
+    .header-title {
+        font-size: 1.8rem;
+    }
+    .header-subtitle {
+        display: none;
+    }
 }

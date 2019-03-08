@@ -3,6 +3,10 @@
     border-radius: 1rem;
     padding: 2rem 1rem;
     text-align: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    overflow: auto !important;
+    
 }
 
 .info-title {
@@ -22,10 +26,11 @@
     margin: 2rem 0rem;
 }
 .info-link {
+    
     margin-top: 2rem;
-    color: $header-color;
+    color: #2dd2c1;
 }
 .info-link:hover {
-    color: $header-color;
+    color: blue;
  
 }

@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import Header from './Header'
-import Home from './Home'
 import List from './List'
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 import NavBar from './NavBar';
 import Form from './Form'
+import Map from './Map'
 import axios from 'axios';
 import Information from './Information';
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory({
+  basename: process.env.PUBLIC_URL
+})
 export default class Graffiti extends Component {
   state = {
     listings: [],
@@ -17,12 +22,12 @@ export default class Graffiti extends Component {
     ],
     status: "All",
     ward: -1,
-    queryResults: "Enter a Ward # and Status to search!"
+    queryResults: ""
 }
 
 
   loadInitialValues = () => {
-    let url = "https://data.cityofchicago.org/resource/cdmx-wzbz.json?$limit=200";
+    let url = "https://data.cityofchicago.org/resource/cdmx-wzbz.json?$SELECT=DISTINCT%20status";
     axios.get(url)
     .then(res => {
         res.data.forEach((listing) => {
@@ -46,7 +51,7 @@ export default class Graffiti extends Component {
     if(e.target.ward.value !== '') ward = e.target.ward.value
 
     //initialize url
-    let url = "https://data.cityofchicago.org/resource/cdmx-wzbz.json?$limit=200";
+    let url = "https://data.cityofchicago.org/resource/cdmx-wzbz.json";
     let urlParams = {}
     //set params
     if(e.target.status.value !== "All") urlParams = {...urlParams, status: e.target.status.value}
@@ -73,24 +78,16 @@ export default class Graffiti extends Component {
   render() {
     return (
      
-        <Router>      
-          <div>
+        <Router history={history} basename={process.env.PUBLIC_URL}>      
+          <div className="app-container">
           <Header/>
           <NavBar/>
-          
-          <Route path="/" render={ 
-            ({location: {pathname}}) => {
-                if(pathname === "/info") return <Information/>
-                return (
-                  <Form queryResults={this.state.queryResults} statuses={this.state.statuses} status={this.status} setStatus={this.setStatus} onSubmit={this.onSubmit} />
-                )
-                }} />
-          
-          
+
           <Switch>
-            <Route exact path="/info" component={null}/>
+            <Route exact path="/info" component={Information}/>
+            <Route exact path="/map" component={() => (<Map listings={this.state.listings}/>)}/>
             <Route exact path="/list" component={() => (<List listings={this.state.listings}/>)}/>
-            <Route exact path="/" component={() => (<Home listings={this.state.listings}/>)}>
+            <Route exact path="/" component={() => (<Form queryResults={this.state.queryResults} statuses={this.state.statuses} status={this.status} setStatus={this.setStatus} onSubmit={this.onSubmit} />)}>
               
             </Route>
             

@@ -2,13 +2,6 @@ import React from 'react'
 import { Map, GoogleApiWrapper,Marker,InfoWindow} from 'google-maps-react';
 
 export class MapContainer extends React.Component {
-  mapStyles = {
-    width: '100rem',
-    maxWidth: '100rem',
-    height: '50rem',
-    borderRadius: '1rem'
-  };
-
   state = {
     showingInfoWindow: false,  //Hides or the shows the infoWindow
     activeMarker: {},          //Shows the active marker upon click
@@ -36,15 +29,34 @@ export class MapContainer extends React.Component {
   
 
   render() {
+    console.log("----")
+    console.log(this.props.listings[0])
+    console.log("----")
+
+    let latitude = 41.8727647
+    let longitude = -87.6566319
+    var mapZoom = 10;
+    if(this.props.listings[0] !== undefined) {
+        let first = this.props.listings[0]
+        if(first.latitude !== undefined) {
+          latitude = first.latitude
+          longitude = first.longitude
+          mapZoom = 12
+        }
+        
+        
+    }
+
+    
+
     return (
-      <div className="container map-container">
         <Map
         google={this.props.google}
-        zoom={10}
+        zoom={mapZoom}
         className="map"
         initialCenter={{
-         lat: 41.8727647,
-         lng: -87.6566319
+         lat: latitude,     
+         lng: longitude
         }}
       >
         
@@ -103,7 +115,6 @@ export class MapContainer extends React.Component {
         </InfoWindow>
         
       </Map>
-      </div>
     )
   }
   
